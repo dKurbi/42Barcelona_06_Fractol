@@ -1,0 +1,11 @@
+fractol
+ft_libft/*.o
+ft_libft/*.a
+mlx/*.a
+mlx/*.o
+*.dSYM
+*.o
+.vscode
+.DS_Store
+a.out
+tutorial_minilibx/
