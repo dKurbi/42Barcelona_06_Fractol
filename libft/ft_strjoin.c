@@ -1,28 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fractol.c                                          :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dkurcbar <dkurcbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/06 16:44:51 by dkurcbar          #+#    #+#             */
-/*   Updated: 2023/10/18 14:13:32 by dkurcbar         ###   ########.fr       */
+/*   Created: 2023/05/25 15:56:41 by dkurcbar          #+#    #+#             */
+/*   Updated: 2023/08/30 19:09:54 by dkurcbar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/fractol.h"
+#include "libft.h"
 
-int	main(int argc, char **argv)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*str;
+	char	*rtn;
+	int		i;
+	int		j;
+	int		leng;
 
-	if (argc < 2)
+	leng = ft_strlen(s1) + ft_strlen(s2);
+	rtn = (char *) malloc((leng + 1) * sizeof (char));
+	if (!rtn)
+		return (NULL);
+	i = 0;
+	while (s1[i])
 	{
-		print_arg_instructions();
-		return (0);
+		rtn[i] = s1[i];
+		i++;
 	}
-	str = ft_strtolow(argv[1]);
-	if (!str)
-		return (1);
-	check_arg(str, argc, argv[2], argv[3]);
+	j = 0;
+	while (s2[j])
+		rtn[i++] = s2[j++];
+	rtn[i] = '\0';
+	return (rtn);
 }

@@ -1,28 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fractol.c                                          :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dkurcbar <dkurcbar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dkurcbar <dkurcbar@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/06 16:44:51 by dkurcbar          #+#    #+#             */
-/*   Updated: 2023/10/18 14:13:32 by dkurcbar         ###   ########.fr       */
+/*   Created: 2023/05/31 17:19:43 by dkurcbar          #+#    #+#             */
+/*   Updated: 2023/05/31 17:32:58 by dkurcbar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/fractol.h"
+#include <unistd.h>
+#include "libft.h"
 
-int	main(int argc, char **argv)
+void	ft_putstr_fd(char *s, int fd)
 {
-	char	*str;
+	int	i;
 
-	if (argc < 2)
-	{
-		print_arg_instructions();
-		return (0);
-	}
-	str = ft_strtolow(argv[1]);
-	if (!str)
-		return (1);
-	check_arg(str, argc, argv[2], argv[3]);
+	i = -1;
+	while (s[++i])
+		write(fd, &s[i], 1);
 }

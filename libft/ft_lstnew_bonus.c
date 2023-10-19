@@ -1,28 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fractol.c                                          :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dkurcbar <dkurcbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/06 16:44:51 by dkurcbar          #+#    #+#             */
-/*   Updated: 2023/10/18 14:13:32 by dkurcbar         ###   ########.fr       */
+/*   Created: 2023/05/31 19:29:36 by dkurcbar          #+#    #+#             */
+/*   Updated: 2023/09/29 14:05:10 by dkurcbar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/fractol.h"
+#include "libft.h"
 
-int	main(int argc, char **argv)
+t_list	*ft_lstnew(void *value)
 {
-	char	*str;
+	t_list	*new;
 
-	if (argc < 2)
-	{
-		print_arg_instructions();
-		return (0);
-	}
-	str = ft_strtolow(argv[1]);
-	if (!str)
-		return (1);
-	check_arg(str, argc, argv[2], argv[3]);
+	new = ft_calloc(1, sizeof(t_list));
+	if (new != NULL)
+		new->value = value;
+	return (new);
 }

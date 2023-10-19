@@ -6,7 +6,7 @@
 /*   By: dkurcbar <dkurcbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 15:26:07 by dkurcbar          #+#    #+#             */
-/*   Updated: 2023/10/10 15:30:17 by dkurcbar         ###   ########.fr       */
+/*   Updated: 2023/10/18 14:19:06 by dkurcbar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,22 +21,24 @@ int	gen_trgb(int opacity, int red, int green, int blue)
 	return (opacity << 24 | red << 16 | green << 8 | blue);
 }
 
-int	get_opacity(int trgb)
+int	get_color(int num_m, char set_color)
 {
-	return ((trgb >> 24) & 0XFF);
-}
+	int				color;
+	unsigned char	num_colors;
 
-int	get_red(int trgb)
-{
-	return ((trgb >> 16) & 0XFF);
-}
-
-int	get_green(int trgb)
-{
-	return ((trgb >> 8) & 0XFF);
-}
-
-int	get_blue(int trgb)
-{
-	return (trgb & 0xFF);
+	num_colors = 6;
+	color = 0;
+	if (set_color % num_colors == 0)
+		color = gen_trgb(0, 50 + sqrt(num_m) * 11, 50, 50 + num_m * 4);
+	else if (set_color % num_colors == 1)
+		color = gen_trgb(0, 50, 50 + sqrt(num_m) * 11, 50 + num_m * 4);
+	else if (set_color % num_colors == 2)
+		color = gen_trgb(0, 50, 50 + num_m * 4, 50 + sqrt(num_m) * 11);
+	else if (set_color % num_colors == 3)
+		color = gen_trgb(0, 50, 50, 50 + num_m * 11);
+	else if (set_color % num_colors == 4)
+		color = gen_trgb(0, 50, num_m * 11, 50 + num_m * 11);
+	else if (set_color % num_colors == 5)
+		color = gen_trgb(0, num_m, num_m * 11, 50 + num_m * 11);
+	return (color);
 }

@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fractol.c                                          :+:      :+:    :+:   */
+/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dkurcbar <dkurcbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/06 16:44:51 by dkurcbar          #+#    #+#             */
-/*   Updated: 2023/10/18 14:13:32 by dkurcbar         ###   ########.fr       */
+/*   Created: 2023/06/01 13:36:08 by dkurcbar          #+#    #+#             */
+/*   Updated: 2023/09/27 17:21:50 by dkurcbar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/fractol.h"
+#include "libft.h"
 
-int	main(int argc, char **argv)
+int	ft_lstsize_ps(t_list *lst)
 {
-	char	*str;
+	int	i;
 
-	if (argc < 2)
+	i = 0;
+	while (lst)
 	{
-		print_arg_instructions();
-		return (0);
+		lst = lst->next;
+		i++;
 	}
-	str = ft_strtolow(argv[1]);
-	if (!str)
-		return (1);
-	check_arg(str, argc, argv[2], argv[3]);
+	return (i);
 }

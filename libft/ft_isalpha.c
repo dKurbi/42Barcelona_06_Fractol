@@ -1,28 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fractol.c                                          :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dkurcbar <dkurcbar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dkurcbar <dkurcbar@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/06 16:44:51 by dkurcbar          #+#    #+#             */
-/*   Updated: 2023/10/18 14:13:32 by dkurcbar         ###   ########.fr       */
+/*   Created: 2023/05/02 14:30:04 by dkurcbar          #+#    #+#             */
+/*   Updated: 2023/05/02 15:05:58 by dkurcbar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/fractol.h"
-
-int	main(int argc, char **argv)
+int	ft_isalpha(int c)
 {
-	char	*str;
-
-	if (argc < 2)
-	{
-		print_arg_instructions();
-		return (0);
-	}
-	str = ft_strtolow(argv[1]);
-	if (!str)
+	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
 		return (1);
-	check_arg(str, argc, argv[2], argv[3]);
+	else
+		return (0);
 }

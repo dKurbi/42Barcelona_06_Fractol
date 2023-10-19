@@ -1,28 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fractol.c                                          :+:      :+:    :+:   */
+/*   fractol_utils_maths_2.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dkurcbar <dkurcbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/06 16:44:51 by dkurcbar          #+#    #+#             */
-/*   Updated: 2023/10/18 14:13:32 by dkurcbar         ###   ########.fr       */
+/*   Created: 2023/10/18 14:26:02 by dkurcbar          #+#    #+#             */
+/*   Updated: 2023/10/18 14:27:57 by dkurcbar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fractol.h"
 
-int	main(int argc, char **argv)
+t_cmplx	square_c(t_cmplx num)
 {
-	char	*str;
+	t_cmplx	rtn;
 
-	if (argc < 2)
-	{
-		print_arg_instructions();
-		return (0);
-	}
-	str = ft_strtolow(argv[1]);
-	if (!str)
-		return (1);
-	check_arg(str, argc, argv[2], argv[3]);
+	rtn.real = (num.real * num.real) - (num.img * num.img);
+	rtn.img = 2 * num.real * num.img;
+	return (rtn);
+}
+
+t_cmplx	add_c(t_cmplx num1, t_cmplx num2)
+{
+	t_cmplx	rtn;
+
+	rtn.real = num1.real + num2.real;
+	rtn.img = num1.img + num2.img;
+	return (rtn);
+}
+
+double	check_module(t_cmplx num)
+{
+	return ((num.real * num.real) + (num.img * num.img));
 }

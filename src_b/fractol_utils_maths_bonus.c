@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fractol.c                                          :+:      :+:    :+:   */
+/*   fractol_utils_maths_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dkurcbar <dkurcbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/06 16:44:51 by dkurcbar          #+#    #+#             */
-/*   Updated: 2023/10/18 14:13:32 by dkurcbar         ###   ########.fr       */
+/*   Created: 2023/10/19 10:47:02 by dkurcbar          #+#    #+#             */
+/*   Updated: 2023/10/19 11:07:25 by dkurcbar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fractol.h"
 
-int	main(int argc, char **argv)
+int	is_burningship_num(t_cmplx c, int n)
 {
-	char	*str;
+	int			i;
+	t_cmplx		num;
 
-	if (argc < 2)
+	i = 0;
+	num.img = 0;
+	num.real = 0;
+	while (++i <= n)
 	{
-		print_arg_instructions();
-		return (0);
+		num = (t_cmplx){ft_abs_d(num.real), ft_abs_d(num.img)};
+		num = add_c(square_c(num), c);
+		if (check_module(num) > 4)
+			return (i);
 	}
-	str = ft_strtolow(argv[1]);
-	if (!str)
-		return (1);
-	check_arg(str, argc, argv[2], argv[3]);
+	return (0);
 }

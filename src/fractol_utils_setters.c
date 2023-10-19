@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fractol.c                                          :+:      :+:    :+:   */
+/*   fractol_utils_setters.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dkurcbar <dkurcbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/06 16:44:51 by dkurcbar          #+#    #+#             */
-/*   Updated: 2023/10/18 14:13:32 by dkurcbar         ###   ########.fr       */
+/*   Created: 2023/10/18 14:12:12 by dkurcbar          #+#    #+#             */
+/*   Updated: 2023/10/18 14:28:27 by dkurcbar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fractol.h"
 
-int	main(int argc, char **argv)
+t_limits	set_limits(double x_0, double x_1, double y_0, double y_1)
 {
-	char	*str;
+	t_limits	rtn;
 
-	if (argc < 2)
-	{
-		print_arg_instructions();
-		return (0);
-	}
-	str = ft_strtolow(argv[1]);
-	if (!str)
-		return (1);
-	check_arg(str, argc, argv[2], argv[3]);
+	rtn.x_0 = x_0;
+	rtn.x_1 = x_1;
+	rtn.y_0 = y_0;
+	rtn.y_1 = y_1;
+	return (rtn);
 }

@@ -1,28 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fractol.c                                          :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dkurcbar <dkurcbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/06 16:44:51 by dkurcbar          #+#    #+#             */
-/*   Updated: 2023/10/18 14:13:32 by dkurcbar         ###   ########.fr       */
+/*   Created: 2023/06/01 17:18:14 by dkurcbar          #+#    #+#             */
+/*   Updated: 2023/10/03 15:51:07 by dkurcbar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/fractol.h"
+#include "libft.h"
 
-int	main(int argc, char **argv)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	char	*str;
+	t_list	*newlist;
+	t_list	*nxt;
+	void	*aux;
 
-	if (argc < 2)
+	newlist = NULL;
+	nxt = newlist;
+	while (lst)
 	{
-		print_arg_instructions();
-		return (0);
+		aux = f(lst->value);
+		nxt = ft_lstnew(aux);
+		if (!nxt)
+		{
+			ft_lstclear(&newlist, del);
+			free(aux);
+			return (NULL);
+		}
+		ft_lstadd_back(&newlist, nxt);
+		lst = lst->next;
 	}
-	str = ft_strtolow(argv[1]);
-	if (!str)
-		return (1);
-	check_arg(str, argc, argv[2], argv[3]);
+	return (newlist);
 }
