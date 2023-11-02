@@ -20,7 +20,7 @@ I used the school graphical library: the MiniLibX! This library included the bas
 - It is capable of creating various Julia sets by accepting different parameters as input.
 - The program accepts a parameter via the command line to specify the type of fractal to display in a window.
   - In case no parameter is provided or an invalid one is used, the program will display a list of available parameters and exit gracefully.
-- The program already utilizes multiple colors to depict the depth of each fractal, and it even incorporates psychedelic effects for enhanced visuals.
+- The program already utilises multiple colors to depict the depth of each fractal, and it even incorporates psychedelic effects for enhanced visuals.
 - When compiled with the "make bonus" command, it also provides the option to visualize the Burningship fractal.
 
 ### Mandelbrot
