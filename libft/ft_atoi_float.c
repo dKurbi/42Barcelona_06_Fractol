@@ -6,7 +6,7 @@
 /*   By: dkurcbar <dkurcbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 17:34:35 by dkurcbar          #+#    #+#             */
-/*   Updated: 2023/10/18 14:24:45 by dkurcbar         ###   ########.fr       */
+/*   Updated: 2024/04/28 18:08:04 by dkurcbar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ static int	postdotmanage(int *posdot)
 	return (0);
 }
 
-static long	pow(int a, int p)
+static long	power(int a, int p)
 {
 	long	rtn;
 
@@ -95,5 +95,5 @@ double	ft_atoi_float(const char *str)
 				return (0);
 		i++;
 	}
-	return (sign * (n / (pow(10, posdot))));
+	return (sign * (n / (power(10, posdot))));
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dkurcbar <dkurcbar@student.42barcel>       +#+  +:+       +#+        */
+/*   By: dkurcbar <dkurcbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 13:25:43 by dkurcbar          #+#    #+#             */
-/*   Updated: 2023/05/31 17:03:14 by dkurcbar         ###   ########.fr       */
+/*   Updated: 2024/04/28 18:05:10 by dkurcbar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,8 @@ static char	*exceptions(int n)
 
 static char	*mall_str(int n, int *num_d)
 {
-	int		i;
 	char	*rtn;
 
-	i = 0;
 	if (n < 0)
 	{
 		*num_d = 1;

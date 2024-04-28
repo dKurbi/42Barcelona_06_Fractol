@@ -6,7 +6,7 @@
 /*   By: dkurcbar <dkurcbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 14:01:55 by dkurcbar          #+#    #+#             */
-/*   Updated: 2023/10/19 11:03:56 by dkurcbar         ###   ########.fr       */
+/*   Updated: 2024/04/28 18:14:03 by dkurcbar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,11 @@
 # ifndef ITER
 #  define ITER 200
 # endif
-# include "../mlx/mlx.h"
+# ifdef __linux__
+#  include "../minilibx-linux/mlx.h"
+# else
+#  include "../mlx/mlx.h"
+# endif
 # include "../libft/libft.h"
 # include <stdlib.h>
 # include <stdio.h>

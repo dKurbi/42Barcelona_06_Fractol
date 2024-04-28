@@ -6,7 +6,7 @@
 /*   By: dkurcbar <dkurcbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 14:48:52 by dkurcbar          #+#    #+#             */
-/*   Updated: 2023/08/30 19:10:54 by dkurcbar         ###   ########.fr       */
+/*   Updated: 2024/04/28 18:04:28 by dkurcbar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,7 +116,8 @@ static char	**mall_words(const char *s, char **rtn, char c)
 			cc[0]++;
 		i++;
 	}
-	(init_free_finish(rtn, cc, 2) && (rtn = NULL));
+	if (init_free_finish(rtn, cc, 2)) 
+		rtn = NULL;
 	return (rtn);
 }
 

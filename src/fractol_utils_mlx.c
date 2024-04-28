@@ -6,7 +6,7 @@
 /*   By: dkurcbar <dkurcbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 14:04:24 by dkurcbar          #+#    #+#             */
-/*   Updated: 2023/10/18 14:31:55 by dkurcbar         ###   ########.fr       */
+/*   Updated: 2024/04/28 18:57:01 by dkurcbar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,14 @@
 t_win	new_window(int w, int h, char *str)
 {
 	void	*mlx_ptr;
-
+	t_win	ret;
+	
 	mlx_ptr = mlx_init();
-	return ((t_win){mlx_ptr, mlx_new_window(mlx_ptr, w, h, str), w, h});
+	ret.height = h;
+	ret.width = w;
+	ret.win_ptr = mlx_new_window(mlx_ptr, w, h, str);
+	ret.mlx_ptr = mlx_ptr;
+	return (ret);
 }
 
 int	exit_program(t_win *window)

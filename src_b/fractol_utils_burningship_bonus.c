@@ -6,7 +6,7 @@
 /*   By: dkurcbar <dkurcbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 10:44:38 by dkurcbar          #+#    #+#             */
-/*   Updated: 2023/10/19 11:29:58 by dkurcbar         ###   ########.fr       */
+/*   Updated: 2024/04/28 19:00:48 by dkurcbar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,12 @@ void	burningship(void)
 
 void	make_burningship(t_img image)
 {
-	t_cmplx		len;
 	t_cmplx		num;
 	t_cmplxint	xy;
 	int			num_m;
 	int			color;
 
 	xy.img = -1;
-	len = calc_graph(image.lim);
 	while (++xy.img < image.h)
 	{
 		xy.real = -1;

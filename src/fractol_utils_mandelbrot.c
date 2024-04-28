@@ -6,7 +6,7 @@
 /*   By: dkurcbar <dkurcbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 11:29:27 by dkurcbar          #+#    #+#             */
-/*   Updated: 2023/10/18 16:01:14 by dkurcbar         ###   ########.fr       */
+/*   Updated: 2024/04/28 18:56:50 by dkurcbar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,14 @@ void	mandelbrot(void)
 
 void	make_mandelbrot(t_img image)
 {
-	t_cmplx		len;
+	//t_cmplx		len;
 	t_cmplx		num;
 	t_cmplxint	xy;
 	int			num_m;
 	int			color;
 
 	xy.img = -1;
-	len = calc_graph(image.lim);
+	//len = calc_graph(image.lim);
 	while (++xy.img < image.h)
 	{
 		xy.real = -1;

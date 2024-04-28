@@ -6,7 +6,7 @@
 /*   By: dkurcbar <dkurcbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 14:21:53 by dkurcbar          #+#    #+#             */
-/*   Updated: 2023/10/19 10:56:02 by dkurcbar         ###   ########.fr       */
+/*   Updated: 2024/04/28 18:09:42 by dkurcbar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,14 +37,14 @@ void	julia(double x, double y)
 
 void	make_julia(t_img image)
 {
-	t_cmplx		len;
+	//t_cmplx		len;
 	t_cmplx		num;
 	t_cmplxint	xy;
 	int			num_m;
 	int			color;
 
 	xy.img = -1;
-	len = calc_graph(image.lim);
+	//t_cmplx len = calc_graph(image.lim);
 	while (++xy.img < image.h)
 	{
 		xy.real = -1;
